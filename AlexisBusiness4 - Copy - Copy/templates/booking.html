@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Service</title>
+</head>
+<body>
+    <h1>Book a Service</h1>
+    <form action="/booking" method="POST">
+        <label>Client:</label>
+        <select name="client_id" required>
+            {% for client in clients %}
+            <option value="{{ client.id }}">{{ client.name }}</option>
+            {% endfor %}
+        </select><br>
+    
+        <label>Service:</label>
+        <input type="text" name="service_name" placeholder="Enter service name (e.g., Plumbing)" required><br>
+    
+        <label>Date:</label>
+        <input type="date" name="date" required><br>
+    
+        <label>Hours Worked:</label>
+        <input type="number" name="hours_worked" required><br>
+    
+        <input type="submit" value="Book">
+    </form>
+    <button onclick="window.location.href='/'">Back to Home</button>
+    

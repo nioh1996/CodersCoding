@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice Summary</title>
+</head>
+<body>
+    <h1>Invoice Summary</h1>
+    <table>
+        <tr>
+            <th>Client</th>
+            <th>Service</th>
+            <th>Hours</th>
+            <th>Total Amount</th>
+        </tr>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.client.name }}</td>
+            <td>{{ appointment.service.service_name }}</td>
+            <td>{{ appointment.hours_worked }}</td>
+            <td>{{ appointment.total_amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button onclick="window.location.href='/'">Back to Home</button>
+</body>
+</html>
